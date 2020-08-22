@@ -1,0 +1,72 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-08-21T00:32:13Z"
+    generation: 1
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: thales-ibm-com-quotes-dev
+    resourceVersion: "144837032"
+    selfLink: /apis/image.openshift.io/v1/namespaces/thales-ibm-com-quotes-dev/imagestreams/quotesapi
+    uid: c23b440f-e345-11ea-98fc-0a580a800008
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/thales-ibm-com-quotes-dev/quotesapi
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-la2.prod.nextcle.com/thales-ibm-com-quotes-dev/quotesapi
+    tags:
+    - items:
+      - created: "2020-08-21T00:33:44Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/thales-ibm-com-quotes-dev/quotesapi@sha256:f9187197a6a7b07a4fef88eb651403fd9286cd5f6c45505446fb30829ce9582f
+        generation: 1
+        image: sha256:f9187197a6a7b07a4fef88eb651403fd9286cd5f6c45505446fb30829ce9582f
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/image.dockerRepositoryCheck: "2020-08-21T00:31:31Z"
+    creationTimestamp: "2020-08-21T00:31:30Z"
+    generation: 2
+    name: quotesdb
+    namespace: thales-ibm-com-quotes-dev
+    resourceVersion: "144835987"
+    selfLink: /apis/image.openshift.io/v1/namespaces/thales-ibm-com-quotes-dev/imagestreams/quotesdb
+    uid: a8a47a3a-e345-11ea-bac5-0a580a820005
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: image-registry.openshift-image-registry.svc:5000/openshift/mysql:5.7
+      generation: 2
+      importPolicy: {}
+      name: "5.7"
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/thales-ibm-com-quotes-dev/quotesdb
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-la2.prod.nextcle.com/thales-ibm-com-quotes-dev/quotesdb
+    tags:
+    - conditions:
+      - generation: 2
+        lastTransitionTime: "2020-08-21T00:31:31Z"
+        message: 'Internal error occurred: Get https://image-registry.openshift-image-registry.svc:5000/v2/:
+          x509: certificate signed by unknown authority'
+        reason: InternalError
+        status: "False"
+        type: ImportSuccess
+      items: null
+      tag: "5.7"
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

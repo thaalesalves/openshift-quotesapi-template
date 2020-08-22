@@ -1,0 +1,64 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-08-21T00:32:14Z"
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: thales-ibm-com-quotes-dev
+    resourceVersion: "144836402"
+    selfLink: /api/v1/namespaces/thales-ibm-com-quotes-dev/services/quotesapi
+    uid: c2c926cd-e345-11ea-ade3-0265a8a0ea3c
+  spec:
+    clusterIP: 172.30.80.29
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: 8443-tcp
+      port: 8443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      app: quotesapi
+      deploymentconfig: quotesapi
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-08-21T00:31:31Z"
+    labels:
+      app: quotesdb
+    name: quotesdb
+    namespace: thales-ibm-com-quotes-dev
+    resourceVersion: "144835995"
+    selfLink: /api/v1/namespaces/thales-ibm-com-quotes-dev/services/quotesdb
+    uid: a903d7e6-e345-11ea-ade3-0265a8a0ea3c
+  spec:
+    clusterIP: 172.30.154.46
+    ports:
+    - name: 3306-tcp
+      port: 3306
+      protocol: TCP
+      targetPort: 3306
+    selector:
+      app: quotesdb
+      deploymentconfig: quotesdb
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

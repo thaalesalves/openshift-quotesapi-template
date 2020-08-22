@@ -1,0 +1,39 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/host.generated: "true"
+    creationTimestamp: "2020-08-21T00:34:07Z"
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: thales-ibm-com-quotes-dev
+    resourceVersion: "144837250"
+    selfLink: /apis/route.openshift.io/v1/namespaces/thales-ibm-com-quotes-dev/routes/quotesapi
+    uid: 05bae8ee-e346-11ea-bac5-0a580a820005
+  spec:
+    host: quotesapi-thales-ibm-com-quotes-dev.apps.ocp-la2.prod.nextcle.com
+    port:
+      targetPort: 8080-tcp
+    subdomain: ""
+    to:
+      kind: Service
+      name: quotesapi
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2020-08-21T00:34:07Z"
+        status: "True"
+        type: Admitted
+      host: quotesapi-thales-ibm-com-quotes-dev.apps.ocp-la2.prod.nextcle.com
+      routerCanonicalHostname: apps.ocp-la2.prod.nextcle.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

@@ -1,0 +1,19 @@
+  # QuotesDB Persistent volume claim
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      annotations:
+        pv.kubernetes.io/bind-completed: "yes"
+        pv.kubernetes.io/bound-by-controller: "yes"
+        volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/aws-ebs
+      finalizers:
+        - kubernetes.io/pvc-protection
+      name: quotesdb-claim
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 300Mi
+      volumeMode: Filesystem
+      volumeName: pvc-a9f6d930-e345-11ea-9b26-0ad2820007c6
